@@ -21,24 +21,31 @@ public class Ejemplo03 {
         double nota;
         boolean bandera = true;
         int salida;
-        
+        double suma = 0; 
+                
         do {
             System.out.println("Ingrese calificaciones");
             nota = entrada.nextDouble();
             
             cadenaFinal = String.format("%s%.2f\n", cadenaFinal, 
-                    nota);
+                    nota, suma);
             
             System.out.println("Ingrese (-111) si desea salir del ciclo ");
             salida = entrada.nextInt();
+            
+            suma = suma + nota;
+         
 
             if (salida == -111) {
                 bandera = false;
+               
             }
 
         } while (bandera); // (bandera==true)
         
         cadenaFinal = String.format("%s\n", cadenaFinal);
         System.out.printf("Listado de Notas\n%s\n", cadenaFinal);
+        System.out.printf("suma de notas\n%s\n", suma);
+       
     }
 }
